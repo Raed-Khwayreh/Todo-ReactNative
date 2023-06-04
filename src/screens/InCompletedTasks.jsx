@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, FlatList, Text} from 'react-native';
 import {useSelector} from 'react-redux';
-import Task from './Task';
+import Task from '../components/Task';
 function InCompletedTasks({navigation}) {
   const tasks = useSelector(state => state.tasks.filter(el => !el.complete));
   return (
