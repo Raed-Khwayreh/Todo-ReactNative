@@ -14,4 +14,4 @@ And from app bar you can press plus icon to add new task.
 
 ##
 Main screen that show all tasks
-<img height=350 width=730 src="https://github.com/Raed-Khwayreh/FURINT-Ecommerce-App/assets/78206754/b3b62724-337f-45fc-a46e-4f7a38ea7230"/>
+<img height=350 width=220 src="https://github.com/Raed-Khwayreh/FURINT-Ecommerce-App/assets/78206754/b3b62724-337f-45fc-a46e-4f7a38ea7230"/>
