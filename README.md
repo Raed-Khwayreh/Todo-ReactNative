@@ -23,6 +23,8 @@ Main screen that show all tasks, completed screen, in completed screen
 You can swipe the task left to delete it or swiper it to right to edit it.
 
 
+<img height=450 width=220 src="https://github.com/Raed-Khwayreh/Todo-ReactNative/assets/78206754/9b9baba5-03e6-44ca-82ff-81b08c723eef"/>
+
 
 Add and Edit Screen
 
