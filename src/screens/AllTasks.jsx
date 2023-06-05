@@ -2,7 +2,8 @@ import React from 'react';
 import {View, FlatList, Text} from 'react-native';
 import {useSelector} from 'react-redux';
 import Task from '../components/Task';
-function AllTasks({navigation}) {
+function AllTasks({ navigation }) {
+  
   const tasks = useSelector(state => state.tasks);
   return (
     <View

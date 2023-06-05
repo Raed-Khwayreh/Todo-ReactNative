@@ -19,7 +19,6 @@ function EditTask({navigation, route}) {
         padding: 20,
       }}>
       <TextInput
-        maxLength={25}
         placeholder="Task title"
         style={[
           styles.input,

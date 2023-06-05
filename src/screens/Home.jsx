@@ -5,8 +5,22 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import AllTasks from './AllTasks';
 import CompletedTasks from './CompletedTasks';
 import InCompletedTasks from './InCompletedTasks';
+import {useDispatch, useSelector} from 'react-redux';
+import {useEffect} from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 const Tab = createBottomTabNavigator();
 function Home({navigation}) {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const data = await AsyncStorage.getItem('@tasks');
+        dispatch({type: 'GET_DATA', payload: JSON.parse(data)});
+      } catch (error) {
+      }
+    };
+    getData();
+  }, []);
   return (
     <Tab.Navigator
       initialRouteName="All Tasks"

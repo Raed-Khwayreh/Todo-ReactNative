@@ -1,7 +1,7 @@
 // import { configureStore } from '@reduxjs/toolkit';
 // import taskReducer from './slice'
 // export default configureStore({reducer: {tasks: taskReducer}});
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {configureStore, createStore} from '@reduxjs/toolkit';
 const initState = {
   tasks: [],
@@ -11,12 +11,24 @@ const taskReducer = (state = initState, action) => {
   ////////check/uncheck task////////
   ///////////////////////////
   if (action.type === 'check') {
+    const setData = async data => {
+      try {
+        // Store the data in AsyncStorage
+        const jsonValue = JSON.stringify(data);
+        await AsyncStorage.setItem('@tasks', jsonValue);
+    
+      } catch (error) {
+        console.log(error);
+      }
+    };
     const updatedItems = state.tasks.map(item => {
       if (item.id === action.payload) {
         return {...item, complete: !item.complete};
       }
       return item;
     });
+    setData(updatedItems);
+
     return {...state, tasks: updatedItems};
   }
 
@@ -24,6 +36,15 @@ const taskReducer = (state = initState, action) => {
   ////////edits task////////
   ///////////////////////////
   if (action.type === 'edit') {
+    const setData = async data => {
+      try {
+        // Store the data in AsyncStorage
+        const jsonValue = JSON.stringify(data);
+        await AsyncStorage.setItem('@tasks', jsonValue);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     const updatedItems = state.tasks.map(item => {
       if (item.id === action.payload.id) {
         return {
@@ -34,6 +55,7 @@ const taskReducer = (state = initState, action) => {
       }
       return item;
     });
+    setData(updatedItems);
     return {...state, tasks: updatedItems};
   }
 
@@ -41,19 +63,46 @@ const taskReducer = (state = initState, action) => {
   ////////delete task////////
   ///////////////////////////
   if (action.type === 'delete') {
+    const setData = async data => {
+      try {
+        // Store the data in AsyncStorage
+        const jsonValue = JSON.stringify(data);
+        await AsyncStorage.setItem('@tasks', jsonValue);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    const updatedItems = state.tasks.filter(item => item.id !== action.payload);
+    setData(updatedItems);
     return {
       ...state,
-      tasks: state.tasks.filter(item => item.id !== action.payload),
+      tasks: updatedItems,
     };
+  }
+
+  //////////////GET DATA FROM LOCAL STORAGE///////////
+  if (action.type === 'GET_DATA') {
+    const data = action.payload;
+
+    return {...state, tasks: data == null ? [] : data};
   }
 
   ///////////////////////////
   ////////add task////////
   ///////////////////////////
   if (action.type === 'add') {
+    const setData = async data => {
+      try {
+        // Store the data in AsyncStorage
+        const jsonValue = JSON.stringify(data);
+        await AsyncStorage.setItem('@tasks', jsonValue);
+      } catch (error) {}
+    };
+    const updatedItems = [...state.tasks, action.payload];
+    setData(updatedItems);
     return {
       ...state,
-      tasks: [...state.tasks, action.payload],
+      tasks: updatedItems,
     };
   }
   return state;
