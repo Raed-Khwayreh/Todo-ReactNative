@@ -9,6 +9,8 @@ In This project I have used:
 
 3-Bottom navigation bar
 
+4- Async local storage
+
 ##
 You can move between tasks pages using bottom navigation bar, and you can add,edit delete tasks.
 And from app bar you can press plus icon to add new task.
@@ -32,6 +34,8 @@ Add and Edit Screens
 <img height=450 width=220 src="https://github.com/Raed-Khwayreh/FURINT-Ecommerce-App/assets/78206754/0aa68847-259e-41b6-9603-e7c36c38e3f4"/>
 
 <img height=450 width=220 src="https://github.com/Raed-Khwayreh/FURINT-Ecommerce-App/assets/78206754/8d715e00-c988-4c8c-a1b6-74beb36571d5"/>
+
+Data saved in localstorage so if you close the app and open it again your previous tasks will be appear
 
 It's a simple app, practicing on react native
 
