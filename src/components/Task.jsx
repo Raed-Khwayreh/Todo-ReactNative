@@ -96,13 +96,18 @@ export default function Task({item, navigation}) {
               />
             </Pressable>
             <View>
-              <Text style={{color: 'black', marginBottom: 4}}>
-                {item.title}
+              <Text
+                style={{
+                  maxWidth: 280,
+                  color: 'black',
+                  marginBottom: 4,
+                }}>
+                {item.title == '' ? 'No Title' : item.title}
               </Text>
               {
                 <Text
                   style={{
-                    maxWidth: 240,
+                    maxWidth: 280,
                     color: '#737373',
                   }}>
                   {item.desc == '' ? 'No description' : item.desc}

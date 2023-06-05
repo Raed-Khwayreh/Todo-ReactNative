@@ -8,10 +8,14 @@ function EditTask({navigation, route}) {
   const [foucsInput1, setInputFoucs1] = useState(false);
   const [foucsInput2, setInputFoucs2] = useState(false);
 
+  const [enable, setEnable] = useState(false);
+
   const [title, setTitle] = useState(item.title);
   const [desc, setDesc] = useState(item.desc);
 
-  useEffect(() => {}, [title, desc]);
+  useEffect(() => {
+    title != '' ? setEnable(true) : setEnable(false);
+  }, [title]);
   return (
     <View
       style={{
@@ -54,6 +58,7 @@ function EditTask({navigation, route}) {
         }}
         defaultValue={item.desc}></TextInput>
       <Pressable
+        disabled={!enable}
         onPress={() => {
           const action = {
             type: 'edit',
@@ -62,7 +67,8 @@ function EditTask({navigation, route}) {
           dispatch(action);
           navigation.goBack();
         }}>
-        <View style={[styles.btn, styles.btnEnabled]}>
+        <View
+          style={[styles.btn, enable ? styles.btnEnabled : styles.btnDisabled]}>
           <Text
             style={{
               color: 'white',
