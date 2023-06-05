@@ -33,9 +33,9 @@ Add and Edit Screens
 
 <img height=450 width=220 src="https://github.com/Raed-Khwayreh/FURINT-Ecommerce-App/assets/78206754/8d715e00-c988-4c8c-a1b6-74beb36571d5"/>
 
-It's simple app, practice on react native
+It's a simple app, practicing on react native
 
-you can run it by just run these command in order
+you can run it by run these commands in order
 
 $ npm install
 
