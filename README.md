@@ -12,7 +12,7 @@ In This project I have used:
 4- Async local storage
 
 ##
-You can move between tasks pages using bottom navigation bar, and you can add,edit delete tasks.
+You can move between tasks pages using bottom navigation bar, and you can add,edit and delete tasks.
 And from app bar you can press plus icon to add new task.
 
 Main screen that show all tasks, completed screen, incompleted screen
@@ -22,7 +22,7 @@ Main screen that show all tasks, completed screen, incompleted screen
 <img height=450 width=220 src="https://github.com/Raed-Khwayreh/FURINT-Ecommerce-App/assets/78206754/97e20640-02b8-40f0-a85e-66825438e71a"/>
 
 
-You can swipe the task left to delete it or swiper it to right to edit it.
+You can swipe the task to the left to delete it or swipe it to the right to edit it.
 
 
 <img height=450 width=220 src="https://github.com/Raed-Khwayreh/Todo-ReactNative/assets/78206754/9b9baba5-03e6-44ca-82ff-81b08c723eef"/>
